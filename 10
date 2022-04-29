@@ -1,0 +1,29 @@
+type BodyPropsType = {
+    title:string
+}
+
+export const Body = (props:BodyPropsType) => {
+    return <div>
+        {props.title}
+    </div>
+}
+
+type FooterPropsType = {
+    title:string
+}
+
+export const Footer = (props:FooterPropsType) => {
+    return <div>
+        {props.title}
+    </div>
+}
+
+type HeaderPropsType = {
+    title:string
+}
+
+export const Header = (props:HeaderPropsType) => {
+    return <div>
+        {props.title}
+    </div>
+}
