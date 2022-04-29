@@ -1,0 +1,47 @@
+import React from 'react';
+
+type NewComponentsPropsType = {
+    students: Array<ArrayStudents>
+}
+
+type ArrayStudents = {
+    id: number
+    name: string
+    age: number
+}
+
+export const NewComponent = (props: NewComponentsPropsType) => {
+    return (
+        <ul>
+            {
+                props.students.map((e) => <li key={e.id}>
+                    <span>{e.name}</span>
+                    <span> age: {e.age}</span>
+                </li>)
+            }
+        </ul>
+    )
+}
+
+type SuperCarsPropsType = {
+    topCars: Array<CarsPropsType>
+}
+
+type CarsPropsType = {
+    manufacturer: string
+    model: string
+}
+
+export const SuperCars = (props: SuperCarsPropsType) => {
+    return <table>
+        {
+            React.Children.toArray(props.topCars.map((e, index) =>
+                <tbody>
+                <tr>
+                    <td>{e.manufacturer} {e.model}</td>
+                    <td>{index + 1}</td>
+                </tr>
+                </tbody>))
+        }
+    </table>
+}
